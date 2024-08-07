@@ -1,0 +1,5 @@
+def home(req):
+    context = {
+        "message": "Bienvenidos a Only Flans"   
+    }
+    return render(req, 'index.html', context)
