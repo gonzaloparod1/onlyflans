@@ -1,8 +1,9 @@
+{% extends 'base.html' %}
 {% block content %}
 <div>
-  <h1>INDEX</h1>
-  <h2>{{mensaje}}</h2>
-  <div id="productos">
+  <h1>{{mensaje}}</h1>
+  
+  {% comment %} <div id="productos">
     {% for p in productos %}
     <div id="producto">
         <img
@@ -16,5 +17,5 @@
     {% endfor %}
 
   </div>
-</div>
+</div> {% endcomment %}
 {% endblock %}

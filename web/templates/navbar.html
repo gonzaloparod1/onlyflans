@@ -1,5 +1,26 @@
-<nav>
-    <a href="/">Inicio</a>
-    <a href="/acerca">Acerca</a>
-    <a href="/">Iniciar Sesión</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Bienvenido</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/acerca">Acerca</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/admin">Iniciar Sesión</a>
+        </li>
+    </div>
+    </div>
 </nav>
+
+{% comment %} <nav>
+    <a href="/">Inicio</a>
+    <a href="/">Bienvenido</a>
+    <a href="/acerca">Acerca</a>
+    <a href="/admin">Iniciar Sesión</a>
+</nav> {% endcomment %}
