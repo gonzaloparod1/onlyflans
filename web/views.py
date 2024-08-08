@@ -1,18 +1,16 @@
 from django.shortcuts import render
 
 # Create your views here.
-def bienvenido(req):
+
+def inicio(req): 
     context = {
-        "data": "Bienvenido a Only-Flans"
+        "mensaje": "APP WEBZ",
+        "productos": [{"name": "tv", "url":"vvv"},{"name": "celu", "url":"www"},{"name": "mesa", "url":"zzz"}]
     }
-    return render(req, 'welcome.html', context)
+    return render(req, 'index.html', context)
 
-def acerca(req):
-    contex = {
-        "data": "Acerca de nosotros"
+def acerca(req): 
+    context = {
+        "mensaje": "Soy un dev que ...",
     }
-    return render(req, 'about.html', contex)
-
-
-
-
+    return render(req, 'acerca.html', context)

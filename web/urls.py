@@ -1,10 +1,9 @@
-## app web - urls
-from django.urls import path, include
-from . import views 
 
+from django.urls import path
+from . import views
+
+# /z/
 urlpatterns = [
-    path('', views.home),
-    path('about/', views.acerca),
-    path('welcome/', views.bienvenido),
-    path('', include('web.urls'))
-    ]
+    path('', views.inicio),
+    path('acerca/', views.acerca)
+]

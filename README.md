@@ -9,12 +9,15 @@ ONLY FLANS written in Python 3.12 with Django 5.1
 
 ### Commands
 
-add path('', include('web.urls'))
+add path('', include('web.urls')) in urls.py
 add web/urls.py, web/views.py
-add template/ about.html, index.html, welcome.html, base.html, home.html, header.html
+add template/ about.html, index.html, welcome.html, base.html, footer.html, header.html
+add img OnlyFlans.png
 {% extends '.html' %}
 {% block content %}
 {% end block %}
+{% for p in productos %}
+{% endfor %}
 
 ## INTEGRANTES
 
