@@ -1,0 +1,116 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h2>Soy una nueva vista</h2>
+  <p>por completar data de {{username}}</p>
+</div>
+{% endblock %}
+
+<!-- {"username": "Mauricio","age": 33} -->
+
+<!-- miFormVacio = ContactFormForm() -> -->
+<div>
+  <label for="id_customer_email">Correo:</label>
+  <input
+    type="email"
+    name="customer_email"
+    maxlength="320"
+    required
+    id="id_customer_email"
+  />
+</div>
+<div>
+  <label for="id_customer_name">Nombre:</label>
+  <input
+    type="text"
+    name="customer_name"
+    maxlength="64"
+    required
+    id="id_customer_name"
+  />
+</div>
+<div>
+  <label for="id_message">Mensaje:</label>
+  <input type="text" name="message" required id="id_message" />
+</div>
+
+<!-- miFormConInfo = ContactFormForm({"customer_email": "kiki@gamial.com", "customer_name": "Kiki", "message": "Hola soy Kiki"}) -> -->
+<div>
+  <label for="id_customer_email">Correo:</label>
+  <input
+    type="email"
+    name="customer_email"
+    value="kiki@gamial.com"
+    maxlength="320"
+    required
+    id="id_customer_email"
+  />
+</div>
+<div>
+  <label for="id_customer_name">Nombre:</label>
+  <input
+    type="text"
+    name="customer_name"
+    value="Kiki"
+    maxlength="64"
+    required
+    id="id_customer_name"
+  />
+</div>
+<div>
+  <label for="id_message">Mensaje:</label>
+  <input
+    type="text"
+    name="message"
+    value="Hola soy Kiki"
+    required
+    id="id_message"
+  />
+</div>
+
+<!-- miFormConInfo.cleaned_data ->  -->
+<!-- OK -> {'customer_email': 'kiki@gamial.com', 'customer_name': 'Kiki', 'message': 'Hola soy Kiki'}   -->
+
+TABLE
+<form>
+<table>
+    {{form}}
+  <tr>
+    <th><label for="id_customer_email">Correo:</label></th>
+    <td>
+      <input
+        type="email"
+        name="customer_email"
+        value="kiki@gamial.com"
+        maxlength="320"
+        required
+        id="id_customer_email"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="id_customer_name">Nombre:</label></th>
+    <td>
+      <input
+        type="text"
+        name="customer_name"
+        value="Kiki"
+        maxlength="64"
+        required
+        id="id_customer_name"
+      />
+    </td>
+  </tr>
+  <tr>
+    <th><label for="id_message">Mensaje:</label></th>
+    <td>
+      <input
+        type="text"
+        name="message"
+        value="Hola soy Kiki"
+        required
+        id="id_message"
+      />
+    </td>
+  </tr>
+</table>
+</form>

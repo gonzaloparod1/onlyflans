@@ -2,17 +2,43 @@ body {
     background-color: white;
 }
 
-#encabezado img {
-    width: 400px;
-    height: 180px;
-    padding-left: 10px;
-    margin-left: 400px;
+header img {
+    width: 450px;
+    height: 140px;
 }
 
-#encabezado {
-    background-color: red;
+nav div {
+    display: flex;
 }
 
-footer {
-    background-color: green;
+#minav {
+    display: flex;
 }
+
+#minav li {
+    margin: 2px 20px;
+}
+
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+#producto img {
+    width: 240px;
+    height: 280px;
+}
+
+#producto {
+    margin: 12px 12px;
+    padding: 4px 18px;
+    background-color: rgb(195, 185, 239);
+    border-radius: 4px;
+    width: 240px;
+}
+
+
+/* style FORM CONTACTO */
+
+form {}
