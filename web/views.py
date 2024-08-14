@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Flan, ContactForm
 from .forms import ContactFormForm, ContactModelForm
-
+from django.contrib.auth.decorators import login_required
 
 def indice(request):
     # public_flans = [{"name": "flan 1", "image_url": "https://pbs.twimg.com/media/CA5u_1pWYAE6FK0.jpg", "description": "flan 1"}, {"name": "flan 2",                                                                                                                              "image_url": "https://pbs.twimg.com/media/CA5u_1pWYAE6FK0.jpg", "description": "flan 2"}, {"name": "flan 3", "image_url": "https://pbs.twimg.com/media/CA5u_1pWYAE6FK0.jpg", "description": "flan 3"}]
@@ -11,7 +11,6 @@ def indice(request):
     # flanes_all = Flan.objects.all()
     flanes_publicos = Flan.objects.filter(is_private=False)
     context = {
-        "mensaje": "hola",
         "flanes_publicos": flanes_publicos
     }
     return render(request, 'index.html', context)
@@ -22,11 +21,12 @@ def acerca(request):
     return render(request, 'about.html', {})
 
 #* vista BIENVENIDO es similar a la vista INDEX - pero muestra solo los flanes privados
+@login_required
 def bienvenido(request):
     # private_flans = [{"name": "flan 7", "image_url": "https://pbs.twimg.com/media/CA5u_1pWYAE6FK0.jpg", "description": "flan 7"},
     #                  {"name": "flan 8", "image_url": "https://pbs.twimg.com/media/CA5u_1pWYAE6FK0.jpg", "description": "flan 8"},]
     # return render(request,'welcome.html',{'private_flans': private_flans})
-    private_flans = Flan.objects.filter(is_private=False)
+    private_flans = Flan.objects.filter(is_private=True)
     return render(request, 'welcome.html', {"private_flans": private_flans})
 
 # *  <!-- apply FORM contacto -->
