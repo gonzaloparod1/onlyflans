@@ -3,18 +3,12 @@ body {
 }
 
 .navbar {
-    background-color: rgb(213, 192, 253) !important;
+    background-color: rgb(137, 116, 231) !important;
 }
 
 header img {
     width: 450px;
     height: 140px;
-}
-
-#productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center
 }
 
 #producto img {
