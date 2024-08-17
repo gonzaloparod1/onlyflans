@@ -1,8 +1,8 @@
-<div class="container">
+<div styles="" class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="minav">
           <li class="nav-item">
             <a
               class="nav-link active"
@@ -27,7 +27,7 @@
           <li class="nav-item">
             <a
               class="nav-link btn btn-secondary text-white"
-              href="{% url 'login' %}"
+              href="{% url 'login'%}"
             >
               Iniciar sesión
             </a>
@@ -38,17 +38,10 @@
           <li class="nav-item">
             <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none">
               {% csrf_token %}
-              <!-- <button type="submit" class="nav-link btn btn-secondary text-white">
-                Cerrar sesión
-              </button> -->
             </form>
-            <a
-              class="nav-link btn btn-secondary text-white"
-              href="#"
+            <a class="nav-link btn btn-secondary text-white" href="#"
               onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-            >
-              Cerrar sesión
-            </a>
+            >Cerrar sesión</a>
           </li>
           {% endif %}
         </ul>

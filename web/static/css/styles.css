@@ -1,29 +1,44 @@
-body {
-    background-color: rgb(213, 192, 253);
+body{
+  /* background-color: black; */
 }
 
-.navbar {
-    background-color: rgb(137, 116, 231) !important;
-}
-
+/* 
 header img {
-    width: 450px;
-    height: 140px;
+  width: 100%;
+  height: 140px;
+} 
+nav div{
+  display: flex;
 }
-
-#producto img {
-    height: 280px;
+#minav{
+  display: flex;
 }
-
+#minav li{
+  margin: 2px 20px;
+}
+#productos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+#producto img{
+width: 240px;
+height: 280px;
+}
 #producto {
-    margin: 12px 12px;
-    padding: 4px 18px;
-    background-color: rgb(137, 116, 231);
-    border-radius: 4px;
-    width: 240px;
-}
-
+  margin: 12px 12px;
+  padding: 4px 18px;
+  background-color: rgb(195, 185, 239);
+  border-radius: 4px;
+  width: 240px;
+} 
+  
+*/
 
 /* style FORM CONTACTO */
+/* 
+form {
+ 
+}
+*/
 
-form {}

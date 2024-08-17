@@ -2,24 +2,38 @@
 
 {% block content %}
 <div class="container">
-  <div class= "text-center">
-    <h2>
-      Nuestros Productos
-      <small class="text-muted">ven y prueba estos deliciosos flanes</small>
-    </h2>
+  <div class="row">
+    <div class="col">
+      <div class="p-5 text-white bg-secondary rounded-3" style="height: auto;">
+        <h2>
+          Nuestros productos
+        </h2>
+        <p>
+          OnlyFlans nace en el año 2021 buscando entregar flanes de calidad.
+        </p>
+        <a href="{% url 'acerca' %}" class="btn btn-outline-dark">
+          Conoce más
+        </a>
+      </div>
+    </div>
   </div>
   <div class="row mt-4 mb-4" id="productos">
 
     {% for flan in flanes_publicos %}
     <div class="col-6 col-md-3">
       <div class="card mb-4" styles="" id="producto">
+        <a href="{% url 'detail_flan' flan_uuid=flan.flan_uuid %}">
         <img src="{{ flan.image_url }}" class="card-img-top" id="card_img_top" alt="..." height="180px">
+        </a>
         <div class="card-body">
           <h5 class="card-title">
             {{ flan.name }}
           </h5>
           <p class="card-text">
             {{ flan.description | slice:":50" }}{% if flan.description|length > 50 %}...{% endif %}
+          </p>
+          <p>
+            Precio: $3012
           </p>
         </div>
       </div>

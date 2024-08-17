@@ -33,5 +33,22 @@ contact_form = ContactForm.objects.create(
     email=form.cleaned_data['email'],
     message=form.cleaned_data['message']
 )
+
+
+---
+
+
+<div>
+    <label for="id_customer_email">Correo:</label>
+    <input type="email" name="customer_email" value="kiki@gamial.com" maxlength="320" required id="id_customer_email">
+</div>
+<div>
+    <label for="id_customer_name">Nombre:</label>
+    <input type="text" name="customer_name" value="Kiki" maxlength="64" required id="id_customer_name">
+</div>
+<div>
+    <label for="id_message">Mensaje:</label>
+    <input type="text" name="message" value="Hola soy Kiki" required id="id_message">
+</div>
 """
 

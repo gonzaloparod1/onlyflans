@@ -1,34 +1,46 @@
-{% extends "base.html" %}
-
+{% extends "base.html" %} 
 {% block content %}
 
-  {% if form.errors %}
-    <p>Su nombre de usuario y contraseña no coinciden. Inténtalo de nuevo.</p>
-  {% endif %}
+<div class="container">
+  <div class="col-12 col-md-6 offset-0 offset-md-3 mt-4 mb-4">
+    <h3 class="text-center">Iniciar sesión</h3>
+    <div>
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %} {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %} {% if next %} {% if user.is_authenticated %}
+        <p>
+          Your account doesn't have access to this page. To proceed, please
+          login with an account that has access.
+        </p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %} {% endif %}
 
-  {% if next %}
-    {% if user.is_authenticated %}
-      <p>Su cuenta no tiene acceso a esta página. Para continuar,
-      inicie sesión con una cuenta que tenga acceso.</p>
-    {% else %}
-      <p>Por favor inicie sesión para ver esta página.</p>
-    {% endif %}
-  {% endif %}
+        <div class="mb-3 text-center">
+          <label for="{{ form.username.id_for_label }}" class="form-label">
+            {{ form.username.label_tag }}
+          </label>
+          <div>{{ form.username }}</div>
+          <!-- <div class="text-danger">
+            {{ form.errors }}
+          </div> -->
+        </div>
 
-  <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    <table>
-      <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-      </tr>
-      <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-      </tr>
-    </table>
-    <input type="submit" value="login">
-    <input type="hidden" name="next" value="{{ next }}">
-  </form>
+        <div class="mb-3 text-center">
+          <label for="{{ form.password.id_for_label }}" class="form-label">
+            {{ form.password.label_tag }}
+          </label>
+          <div>{{ form.password }}</div>
+        </div>
+
+        <div class="text-center">
+          <input type="submit" value="Iniciar sesión" class="btn btn-primary" />
+          <input type="hidden" name="next" value="{{ next }}" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

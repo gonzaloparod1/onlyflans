@@ -4,9 +4,11 @@ from . import views
 urlpatterns = [
     path('', views.indice, name="indice"),
     path('acerca/', views.acerca, name="acerca"),
-    path('welcome/', views.bienvenido, name="bienvenido"),
+    path('bienvenido/', views.bienvenido, name="bienvenido"),
     path('exito', views.exito, name="exito"),
-    path('nueva/', views.nueva_vista),
+    path('nueva', views.nueva_vista),
     path('contacto', views.contacto, name="contacto"),
+    path('detalle/<uuid:flan_uuid>', views.detalle_flan, name='detail_flan'),
+    # path('favorite-int', views.favorites, name="fav"),
     #* <!-- apply CONTACT FORM url --> 
 ]

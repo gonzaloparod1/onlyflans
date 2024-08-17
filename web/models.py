@@ -9,6 +9,7 @@ class Flan(models.Model):
     slug = models.SlugField()
     is_private = models.BooleanField()
 
+
 class ContactForm(models.Model):
     contact_form_uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     customer_email = models.EmailField()

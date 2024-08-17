@@ -26,4 +26,24 @@ editable
 ● customer_email del tipo EmailField
 ● customer_name del tipo CharField (largo máximo 64 caracteres)
 ● message del tipo TextField
+
+pepe = ContactModelForm({"customer_email": "sasa",  "customer_name":"sisi", "message": "susu"})
+pepe -> <label><input>  <label><input>  <label><input>  
+<div>
+    <label for="id_customer_email">Correo:</label>
+    <input type="email" name="customer_email" value="sasa" maxlength="320" required id="id_customer_email">
+</div>
+<div>
+    <label for="id_customer_name">Nombre:</label>
+    <input type="text" name="customer_name" value="sisi" maxlength="64" required id="id_customer_name">
+</div>
+<div>
+    <label for="id_message">Mensaje:</label>
+    <input type="text" name="message" value="susu" required id="id_message">
+</div>
+
+pepe.customer_name -> <input type="text" name="customer_name" value="sisi" maxlength="64" required id="id_customer_name">
+
+pepe.is_valid() -> False
+pepe.cleaned_data -> {"customer_email": "sasa",  "customer_name":"sisi", "message": "susu"}
 """
