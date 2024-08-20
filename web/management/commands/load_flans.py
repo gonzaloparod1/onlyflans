@@ -19,7 +19,9 @@ class Command(BaseCommand):
                         description=flan['description'],
                         image_url=flan['image_url'],
                         slug=flan['slug'],
-                        is_private=bool(flan['is_private'])
+                        is_private=bool(flan['is_private']),
+                        price=flan.get('price', 0.00),  # Default to 0.00 if price is not provided
+                        stock=flan.get('stock', 0)  # Default to 0 if stock is not provided
                     )
                     for flan in flans_data
                 ]

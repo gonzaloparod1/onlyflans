@@ -1,5 +1,6 @@
 from django import forms
-from .models import ContactForm
+from django.contrib.auth.models import User
+from .models import ContactForm, Profile
 
 
 # *  --- apply ContactFormForm ---
@@ -17,6 +18,17 @@ class ContactModelForm(forms.ModelForm):
         model = ContactForm
         fields = ['customer_email', 'customer_name', 'message']
 
+#* PROFILE FORMS 
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['bio', 'location', 'birth_date']
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']
+# ---
 
 """
 ContactForm que contenga los 
