@@ -30,6 +30,23 @@ class UserForm(forms.ModelForm):
         fields = ['first_name', 'last_name', 'email']
 # ---
 
+
+#* REGISTER FORMS 
+from django.contrib.auth.forms import UserCreationForm
+
+class CustomUserCreationForm(UserCreationForm):
+    email = forms.EmailField(required=True, help_text='Requerido. Ingrese una dirección de correo electrónico válida.')
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError("Este correo electrónico ya está en uso.")
+        return email
+
 """
 ContactForm que contenga los 
 siguientes atributos:

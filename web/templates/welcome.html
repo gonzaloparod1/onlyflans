@@ -7,7 +7,7 @@
     <!-- d-none d-md-block: Esta clase asegura que el contenido se oculte en pantallas menores a 768px (media query md) -->
     <div class="col">
       <div class="h-100 p-5 text-white bg-dark rounded-3">
-        <h2>Bienvenido {{ user.get_username }}</h2>
+        <h2>Bienvenido {{ user.get_username | upper }}</h2>
         <p>
           Tenemos una lista de productos exclusivos para ti. ¿Quieres conocer
           más?
@@ -30,7 +30,10 @@
             {{ flan.name }}
           </h5>
           <p class="card-text">
-            {{ flan.description|slice:":250" }}{% if flan.description|length > 350 %}...{% endif %}
+            {{ flan.description | slice:":100" }}{% if flan.description|length > 50 %}...{% endif %}
+          </p>
+          <p>
+            Precio: ${{flan.price}}
           </p>
         </div>
       </div>
@@ -39,4 +42,3 @@
   </div>
 </div>
 {% endblock %}
-

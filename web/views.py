@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Flan, ContactForm, Profile
-from .forms import ContactFormForm, ContactModelForm, ProfileForm, UserForm
+from .forms import ContactFormForm, ContactModelForm, ProfileForm, UserForm, CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -109,6 +109,20 @@ def profile_view(request):
 def profile_exito(request):
     return render(request, 'profile_exito.html', {})
 
+#* REGISTER
+from django.contrib.auth import login
+
+def register(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save() #* Se guarda el user en la DB
+            login(request, user) #* Se logea
+            return redirect('profile')  # Redirige a la vista de perfil u otra vista
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'register.html', {'form': form})
+
 # def favorites(request):
 #     return render(request, 'favorite.html', {})
 
@@ -139,5 +153,5 @@ def profile_exito(request):
 
 
 @login_required
-def crear_flan():
+def crer_flan():
     pass
