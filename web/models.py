@@ -13,7 +13,7 @@ class Flan(models.Model):
     stock = models.IntegerField(default=0)
     
     def __str__(self):
-        return self.price
+        return self.name
     
 
 

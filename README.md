@@ -140,7 +140,7 @@ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE
 
 ### Contacto
 
-Si tienes alguna pregunta o sugerencia, no dudes en contactarnos a través de [email@example.com].
+Si tienes alguna pregunta o sugerencia, no dudes en contactarnos a través de [gonzalo.parodi@gmail.com].
 
 
 ---
