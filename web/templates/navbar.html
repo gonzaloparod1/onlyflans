@@ -1,4 +1,4 @@
-<div styles=""  class="container">
+<div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-white mb-2">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,68 +7,49 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'indice' %}">
-              Inicio
-            </a>
+            <a class="nav-link active" aria-current="page" href="{% url 'indice' %}">Inicio</a>
           </li>
 
-         {% if user.is_authenticated %}
+          {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'bienvenido' %}">
-              Bienvenido
-            </a>
+            <a class="nav-link" href="{% url 'bienvenido' %}">Bienvenido</a>
           </li>
           {% endif %}
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'acerca' %}">
-              Acerca
-            </a>
+            <a class="nav-link" href="{% url 'acerca' %}">Acerca</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contacto' %}">
-              Contacto
-            </a>
+            <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
           </li>
-
-          {% if not user.is_authenticated %}
-          <li class="nav-item ">
-            <a class="nav-link btn btn-secondary me-4 text-white" href="{% url 'login'%}">
-              Iniciar sesión
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link btn btn-secondary text-white" href="{% url 'register'%}">
-              Registrarse
-            </a>
-          </li>
-          {% endif %}
         </ul>
 
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          {% if not user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link btn btn-secondary me-2 text-white" href="{% url 'login' %}">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-secondary text-white" href="{% url 'register' %}">Registrarse</a>
+          </li>
+          {% endif %}
+          
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'profile' %}">
-              Perfil
-            </a>
+            <a class="nav-link" href="{% url 'profile' %}">Perfil</a>
           </li>
           <li class="nav-item">
             <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: none;">
               {% csrf_token %}
             </form>
             <a class="nav-link btn btn-secondary text-white" href="#" 
-               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
               Cerrar sesión
             </a>
           </li>
           {% endif %}
         </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
       </div>
     </div>
   </nav>
 </div>
-
